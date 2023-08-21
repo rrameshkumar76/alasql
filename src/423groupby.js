@@ -437,7 +437,7 @@ if(false) {
 					} else if (col.aggregatorid === 'MAX') {
 						if ('funcid' in col.expression) {
 							let colexp1 = colExpIfFunIdExists(col.expression);
-							//console.log(pre + 'if ((y=' + colexp + ") < g['" + colas + "']) g['" + colas + "'])
+							//console.log(pre + 'if ((y=' + colexp + ") > g['" + colas + "']) g['" + colas + "'])
 							return(
 								pre +
 								`if((g['${colas}'] == null && ${colexp1}!== null) ? y = ${colexp} : (g['${colas}']!== null &&
