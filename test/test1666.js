@@ -58,8 +58,8 @@ describe('Test ' + test + ' - inner functions for SUM, MIN and MAX', function ()
 		assert.deepEqual(res, [{a: 2}]);
 	});
 
-	it('MAX/MIN with Round function', function () {
-		var data = [{a: 9.25},{a: 5.25},{a: 33.45,},];
+	it('MAX/MIN/AVG with Round or Ceil function', function () {
+		var data = [{a: 10.25},{a: 5.25},{a: 33.45,},];
 		res = alasql(
 			`SELECT
 				MIN(ROUND(a)) AS a,
@@ -67,7 +67,9 @@ describe('Test ' + test + ' - inner functions for SUM, MIN and MAX', function ()
 				MIN(a) AS c,
 				MAX(a) AS d,
 				MIN(CEIL(a)) AS e,
-				MAX(CEIL(a)) AS f
+				MAX(CEIL(a)) AS f,
+				AVG(ROUND(a)) AS g,
+				AVG(CEIL(a)) AS h
 			FROM ?`,
 			[data]
 		);
@@ -78,7 +80,9 @@ describe('Test ' + test + ' - inner functions for SUM, MIN and MAX', function ()
 				"c":5.25,
 				"d":33.45,
 				"e":6,
-				"f":34
+				"f":34,
+				"g":16,
+				"h":17
 			}
 		]);
 
