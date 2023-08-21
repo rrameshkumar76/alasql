@@ -59,18 +59,26 @@ describe('Test ' + test + ' - inner functions for SUM, MIN and MAX', function ()
 	});
 
 	it('MAX/MIN with Round function', function () {
-		var data = [{a: 5.25},{a: 33.45,},];
+		var data = [{a: 9.25},{a: 5.25},{a: 33.45,},];
 		res = alasql(
 			`SELECT
 				MIN(ROUND(a)) AS a,
-				MAX(ROUND(a)) AS b
+				MAX(ROUND(a)) AS b,
+				MIN(a) AS c,
+				MAX(a) AS d,
+				MIN(CEIL(a)) AS e,
+				MAX(CEIL(a)) AS f
 			FROM ?`,
 			[data]
 		);
 		assert.deepEqual(res, [
 			{
-				"a": 5,
-				"b": 33
+				"a":5,
+				"b":33,
+				"c":5.25,
+				"d":33.45,
+				"e":6,
+				"f":34
 			}
 		]);
 
