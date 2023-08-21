@@ -8,7 +8,7 @@ var test = '1666';
 describe('Test ' + test + ' - inner functions for SUM, MIN and MAX', function () {
 	it('SUM with Round function', function () {
 		var data = [
-			{a: 1.12, },
+			{a: 1.12,},
 			{
 				a: 2.45,
 			},
@@ -56,5 +56,22 @@ describe('Test ' + test + ' - inner functions for SUM, MIN and MAX', function ()
 		var data = [[{a: 2}]];
 		res = alasql(`SELECT SUM(a) AS a FROM ?`, data);
 		assert.deepEqual(res, [{a: 2}]);
+	});
+
+	it('MAX/MIN with Round function', function () {
+		var data = [{a: 5.25},{a: 33.45,},];
+		res = alasql(
+			`SELECT
+				MIN(ROUND(a)) AS a
+			FROM ?`,
+			[data]
+		);
+		assert.deepEqual(res, [
+			{
+				"a": 5,
+			}
+		]);
+
+
 	});
 });
