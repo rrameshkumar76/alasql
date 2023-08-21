@@ -154,7 +154,7 @@ if(false) {
 					if (col.aggregatorid === 'SUM') {
 						if ('funcid' in col.expression) {
 							let colexp1 = colExpIfFunIdExists(col.expression);
-							return `'${colas}':(${colexp1})|| typeof ${colexp1} == 'number' ? ${colexp1} : null,`;
+							return `'${colas}':(${colexp1})|| typeof ${colexp1} == 'number' ? ${colexp} : null,`;
 						}
 						return `'${colas}':(${colexp})|| typeof ${colexp} == 'number' ? ${colexp} : null,`;
 					} else if (col.aggregatorid === 'TOTAL') {
