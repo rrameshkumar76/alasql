@@ -62,13 +62,15 @@ describe('Test ' + test + ' - inner functions for SUM, MIN and MAX', function ()
 		var data = [{a: 5.25},{a: 33.45,},];
 		res = alasql(
 			`SELECT
-				MIN(ROUND(a)) AS a
+				MIN(ROUND(a)) AS a,
+				MAX(ROUND(a)) AS b
 			FROM ?`,
 			[data]
 		);
 		assert.deepEqual(res, [
 			{
 				"a": 5,
+				"b": 33
 			}
 		]);
 
