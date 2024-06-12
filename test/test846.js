@@ -20,14 +20,14 @@ describe('Test ' + test + ' - non-numeric values for SUM, MIN and MAX', function
 			},
 		];
 		res = alasql(
-			`SELECT 
-				MAX(a) AS a, 
-				max(b) as b, 
-				mAx(c) as c, 
-				mAx(c2) as c2, 
+			`SELECT
+				MAX(a) AS a,
+				max(b) as b,
+				mAx(c) as c,
+				mAx(c2) as c2,
 				MaX(d) as d,
-				MAX(e) as e,		
-				MAX(f) as f	
+				MAX(e) as e,
+				MAX(f) as f
 			FROM ?`,
 			[data]
 		);
@@ -53,14 +53,14 @@ describe('Test ' + test + ' - non-numeric values for SUM, MIN and MAX', function
 			},
 		];
 		res = alasql(
-			`SELECT 
-				MAX(a) AS a, 
-				max(b) as b, 
-				mAx(c) as c, 
-				mAx(c2) as c2, 
+			`SELECT
+				MAX(a) AS a,
+				max(b) as b,
+				mAx(c) as c,
+				mAx(c2) as c2,
 				MaX(d) as d,
-				MAX(e) as e,		
-				MAX(f) as f	
+				MAX(e) as e,
+				MAX(f) as f
 			FROM ?`,
 			[data]
 		);
@@ -91,14 +91,14 @@ describe('Test ' + test + ' - non-numeric values for SUM, MIN and MAX', function
 			},
 		];
 		res = alasql(
-			`SELECT 
-				MIN(a) AS a, 
-				min(b) as b, 
-				mIn(c) as c, 
-				mIn(c2) as c2, 
+			`SELECT
+				MIN(a) AS a,
+				min(b) as b,
+				mIn(c) as c,
+				mIn(c2) as c2,
 				MiN(d) as d,
-				MIN(e) as e,	
-				MIN(f) as f	
+				MIN(e) as e,
+				MIN(f) as f
 			FROM ?`,
 			[data]
 		);
@@ -124,14 +124,14 @@ describe('Test ' + test + ' - non-numeric values for SUM, MIN and MAX', function
 			},
 		];
 		res = alasql(
-			`SELECT 
-			MIN(a) AS a, 
-			min(b) as b, 
-			mIn(c) as c, 
-			mIn(c2) as c2, 
+			`SELECT
+			MIN(a) AS a,
+			min(b) as b,
+			mIn(c) as c,
+			mIn(c2) as c2,
 			MiN(d) as d,
-			MIN(e) as e,	
-			MIN(f) as f	
+			MIN(e) as e,
+			MIN(f) as f
 		FROM ?`,
 			[data]
 		);
@@ -162,14 +162,14 @@ describe('Test ' + test + ' - non-numeric values for SUM, MIN and MAX', function
 			},
 		];
 		res = alasql(
-			`SELECT 
-				SUM(a) AS a, 
-				sum(b) as b, 
-				sUm(c) as c, 
-				sUm(c2) as c2, 
+			`SELECT
+				SUM(a) AS a,
+				sum(b) as b,
+				sUm(c) as c,
+				sUm(c2) as c2,
 				SuM(d) as d,
-				SUM(e) as e,	
-				SUM(f) as f	
+				SUM(e) as e,
+				SUM(f) as f
 			FROM ?`,
 			[data]
 		);
@@ -257,16 +257,16 @@ describe('Test ' + test + ' - non-numeric values for SUM, MIN and MAX', function
 			},
 		];
 		res = alasql(
-			`SELECT 
-				TOTAL(a) AS a, 
-				total(b) as b, 
-				Total(c) as c, 
-				toTal(c2) as c2, 
+			`SELECT
+				TOTAL(a) AS a,
+				total(b) as b,
+				Total(c) as c,
+				toTal(c2) as c2,
 				totAl(d) as d,
-				totaL(e) as e,	
+				totaL(e) as e,
 				TOTAL(f) as f,
 				TOTAL(g) as g,
-				TOTAL(h) as h		
+				TOTAL(h) as h
 			FROM ?`,
 			[data]
 		);
